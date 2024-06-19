@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+
 import Counter from "./pages/counter/Counter.jsx";
 import Currency from "./pages/currency/Currency.jsx";
+import User from "./pages/user/User.jsx";
+import Github, { githubInfoLoader } from "./pages/Github/Github.jsx";
 import {
   Route,
   RouterProvider,
@@ -30,19 +32,20 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Counter />} />
       <Route path="currency" element={<Currency />} />
-      {/* Currency */}
+      <Route path="user/:userid" element={<User />} />
+      <Route loader={githubInfoLoader} path="github" element={<Github />} />
+
       {/* 
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="user/:userid" element={<User />} />
-      <Route loader={githubInfoLoader} path="github" element={<Github />} /> */}
+      */}
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );
