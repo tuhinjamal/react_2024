@@ -4,6 +4,7 @@ import ThemeBtn from "./components/ThemeBtn";
 import Card from "./components/Card";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import UserContextProvider from "@/context/UserContextProvider.jsx";
 function Context() {
   const [themeMode, setThemeMode] = React.useState("light");
 
@@ -24,8 +25,10 @@ function Context() {
   return (
     <>
       <div className="bg-gray-600 text-white text-3xl p-4">
-        <Login />
-        <Profile />
+        <UserContextProvider>
+          <Login />
+          <Profile />
+        </UserContextProvider>
         <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
           <div className="flex flex-wrap min-h-screen items-center">
             <div className="w-full">

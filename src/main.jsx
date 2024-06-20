@@ -6,7 +6,7 @@ import User from "./pages/user/User.jsx";
 import Github, { githubInfoLoader } from "./pages/Github/Github.jsx";
 import Context from "./pages/contextAPI/Context.jsx";
 
-import UserContextProvider from "./context/UserContextProvider.jsx";
+// import UserContextProvider from "./context/UserContextProvider.jsx";
 
 import {
   Route,
@@ -44,8 +44,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserContextProvider>
-      <RouterProvider router={router} />
-    </UserContextProvider>
+    {/* <UserContextProvider> */}
+    <RouterProvider router={router} />
+    {/* </UserContextProvider> */}
   </React.StrictMode>
 );
