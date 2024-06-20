@@ -1,6 +1,7 @@
 import Header from "./layout-components/Header/Header.jsx";
 import Footer from "./layout-components/Footer/Footer.jsx";
 import { Outlet } from "react-router-dom";
+
 import "../App.css";
 import { useState } from "react";
 function Index() {
