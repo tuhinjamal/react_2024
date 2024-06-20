@@ -5,8 +5,9 @@ import Currency from "./pages/currency/Currency.jsx";
 import User from "./pages/user/User.jsx";
 import Github, { githubInfoLoader } from "./pages/Github/Github.jsx";
 import Context from "./pages/contextAPI/Context.jsx";
-
-// import UserContextProvider from "./context/UserContextProvider.jsx";
+import ReduxStoreManagement from "./pages/redux-example/ReduxStoreManagement.jsx";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 import {
   Route,
@@ -38,14 +39,15 @@ const router = createBrowserRouter(
       <Route path="user/:userid" element={<User />} />
       <Route loader={githubInfoLoader} path="github" element={<Github />} />
       <Route path="context" element={<Context />} />
+      <Route path="redux" element={<ReduxStoreManagement />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <UserContextProvider> */}
-    <RouterProvider router={router} />
-    {/* </UserContextProvider> */}
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

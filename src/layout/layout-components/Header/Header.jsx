@@ -124,6 +124,18 @@ export default function Header() {
                             Context
                           </NavLink>
                         </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/redux"
+                            className={({ isActive }) =>
+                              `block   duration-200 ${
+                                isActive ? "text-orange-700" : "text-gray-700"
+                              }  hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700   px-4 py-2 text-sm`
+                            }
+                          >
+                            Redux
+                          </NavLink>
+                        </MenuItem>
                       </div>
                     </MenuItems>
                   </Transition>
